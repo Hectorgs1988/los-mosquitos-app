@@ -11,51 +11,59 @@ import OfrecerViaje from '../pages/OfrecerViaje'
 import PanelAdmin from '../pages/PanelAdmin'
 import NuevoSocio from '../pages/NuevoSocio'
 import DetalleSocio from '../pages/DetalleSocio'
+import Layout from '../components/Layout'
 const router = createBrowserRouter([
+
 {
     path: '/',
-    element: <Home />,
+    element: <Layout />,
+    children: [
+        {
+            path: '/',
+            element: <Home />,
+        },
+        {
+            path: '/RecuperarContrasena',
+            element: <RecuperarContrasena />,
+        },
+        {
+            path: '/inicio',
+            element: <Inicio />,
+        },
+        {
+            path: '/ReservarEspacio',
+            element: <ReservarEspacio />
+        },
+        {
+            path: '/CrearReserva',
+            element: <CrearReserva />
+        },
+        {
+            path: '/CompartirCoche',
+            element: <CompartirCoche />
+        },
+        {
+            path: '/OfrecerViaje',
+            element: <OfrecerViaje />
+        },
+        {
+            path: '/PanelAdmin',
+            element: <PanelAdmin />
+        },
+        {
+            path: '/NuevoSocio',
+            element: <NuevoSocio />
+        },
+        {
+            path: '/DetalleSocio',
+            element: <DetalleSocio />
+        },
+    ]
 },
 {
     path: '/login',
     element: <Login />,
-},
-{
-    path: '/RecuperarContrasena',
-    element: <RecuperarContrasena />,
-},
-{
-    path: '/inicio',
-    element: <Inicio />,
-},
-{
-    path: '/ReservarEspacio',
-    element: <ReservarEspacio />
-},
-{
-    path: '/CrearReserva',
-    element: <CrearReserva />
-},
-{
-    path: '/CompartirCoche',
-    element: <CompartirCoche />
-},
-{
-    path: '/OfrecerViaje',
-    element: <OfrecerViaje />
-},
-{
-    path: '/PanelAdmin',
-    element: <PanelAdmin />
-},
-{
-    path: '/NuevoSocio',
-    element: <NuevoSocio />
-},
-{
-    path: '/DetalleSocio',
-    element: <DetalleSocio />
 }
-
 ])
+
 export default router
